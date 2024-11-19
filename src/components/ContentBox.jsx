@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const ContentBox = () => {
   const styles = {
     container: {
@@ -12,11 +13,10 @@ const ContentBox = () => {
     },
     box: {
       backgroundColor: '#c68c53',
-      color: 'white',
-      width: '1800px',
-      height: '750px',
-      display: 'flex',
-      flexDirection: 'column',
+      width: '1200px',
+      height: '600px',
+      //display: 'flex',
+      //flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
       textAlign: 'center',
@@ -28,12 +28,11 @@ const ContentBox = () => {
   return (
     <div style={styles.container}>
       <div style={styles.box}>
-        <h1>Content Box</h1>
-        <p>
-          Where the search bar will go.
-        </p>
+        <h1>Home</h1> 
+        
       </div>
     </div>
+    
   );
 };
 
