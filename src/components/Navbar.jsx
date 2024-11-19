@@ -27,11 +27,11 @@ const Navbar = () => {
         <a href="#Admin Login" style={{ color: "white", textDecoration: "none" }}>
           Admin Login
         </a>
-        <a href="#services" style={{ color: "white", textDecoration: "none" }}>
-          Services
+        <a href="#View" style={{ color: "white", textDecoration: "none" }}>
+          View your books
         </a>
-        <a href="#contact" style={{ color: "white", textDecoration: "none" }}>
-          Contact
+        <a href="#Log out" style={{ color: "white", textDecoration: "none" }}>
+          Log out
         </a>
       </div>
     </div>
