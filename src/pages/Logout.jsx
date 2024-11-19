@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 
-function Signup() {
+function Logout() {
 return (
     <>
         <Navbar />
@@ -12,4 +12,4 @@ return (
 );
 };
 
-export default Signup;
+export default Logout;

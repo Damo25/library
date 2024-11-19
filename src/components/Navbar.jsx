@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const navbarStyle = {
@@ -18,22 +19,23 @@ const Navbar = () => {
 
   return (
     <div style={navbarStyle}>
-      <div className="logo" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>
+      <Link to="/Home" style={{ fontSize: "1.5rem", fontWeight: "bold", color: "white", textDecoration: "none" }}>
         Library
-      </div>
+      </Link>
       <div className="links" style={{ display: "flex", gap: "15px" }}>
-        <a href="#Login" style={{ color: "white", textDecoration: "none" }}>
+
+        <Link to="/login" style={{ color: "white", textDecoration: "none" }}>
           Login
-        </a>
-        <a href="#Admin Login" style={{ color: "white", textDecoration: "none" }}>
+        </Link>
+        <Link to="/admin" style={{ color: "white", textDecoration: "none" }}>
           Admin Login
-        </a>
-        <a href="/pages/Signup.jsx" style={{ color: "white", textDecoration: "none" }}>
+        </Link>
+        <Link to="/signup" style={{ color: "white", textDecoration: "none" }}>
           Sign Up
-        </a>
-        <a href="#Log out" style={{ color: "white", textDecoration: "none" }}>
+        </Link>
+        <Link to="/logout" style={{ color: "white", textDecoration: "none" }}>
           Log out
-        </a>
+        </Link>
       </div>
     </div>
   );
