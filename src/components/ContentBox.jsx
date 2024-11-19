@@ -8,6 +8,7 @@ const ContentBox = () => {
       alignItems: 'center',
       height: '100vh',
       backgroundColor: '#f0f0f0',
+      padding: '20px',
     },
     box: {
       backgroundColor: '#c68c53',

@@ -13,6 +13,7 @@ const Navbar = () => {
     position: "fixed",
     top: 0,
     left: 0,
+    zIndex: 1000,
   };
 
   return (
@@ -27,8 +28,8 @@ const Navbar = () => {
         <a href="#Admin Login" style={{ color: "white", textDecoration: "none" }}>
           Admin Login
         </a>
-        <a href="#View" style={{ color: "white", textDecoration: "none" }}>
-          View your books
+        <a href="/pages/Signup.jsx" style={{ color: "white", textDecoration: "none" }}>
+          Sign Up
         </a>
         <a href="#Log out" style={{ color: "white", textDecoration: "none" }}>
           Log out
