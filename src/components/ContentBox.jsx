@@ -1,5 +1,5 @@
 import React from 'react';
-
+import SearchBar from '../components/SearchBar';
 
 const ContentBox = () => {
   const styles = {
@@ -22,6 +22,15 @@ const ContentBox = () => {
       textAlign: 'center',
       borderRadius: '20px',
       border: '10px solid #4d2800',
+      padding: '20px',
+    },
+
+    searchWrapper: {
+      width: '80%',  // Set the width of the div around the SearchBar
+      maxWidth: '600px',  // Maximum width for the div
+      marginTop: '20px',  // Margin above the search bar
+      display: 'flex',
+      justifyContent: 'center', // Center the search bar inside the div
     },
   };
 
@@ -30,9 +39,11 @@ const ContentBox = () => {
       <div style={styles.box}>
         <h1>Home</h1> 
         
+        <div style={styles.searchWrapper}>
+        <SearchBar />
       </div>
     </div>
-    
+  </div>
   );
 };
 
