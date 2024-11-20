@@ -84,23 +84,29 @@
     height: 100vh;
     padding: '20px';
   }
-  .content-box-register{
-    background-Color: #c68c53;
-    width: 1200px;
-    height: 600px;
-    justify-Content: center;
-    align-Items: center;
-    text-Align: center;
-    border-Radius: 20px;
-    border: 10px solid #4d2800;
-    padding: 20px;
-  }
-  .box-container-register{
+  .box-container-register {
     display: flex;
-    justify-Content: center;
-    align-Items: center;
-    height: 100vh;
-    padding: '20px';
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 160px); 
+    margin-top: 80px; 
+    margin-bottom: 80px; 
+    padding: 20px;
+    overflow-y: auto; 
+    box-sizing: border-box;
+  }
+  
+  .content-box-register {
+    background-color: #c68c53;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    border: 10px solid #4d2800;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
   }
 
   .search-wrapper{
@@ -115,13 +121,14 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 20px;
+    width: 100%;
   }
   
   .form-group {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
   }
   
   label {
@@ -135,6 +142,7 @@
     border: 2px solid #4d2800;
     border-radius: 5px;
     font-size: 1rem;
+    box-sizing: border-box;
   }
   
   .login-button {
@@ -146,9 +154,11 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
+    align-self: center;
   }
   
   .login-button:hover {
     background-color: #3b2000;
   }
+  
 
