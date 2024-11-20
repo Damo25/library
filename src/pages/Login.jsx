@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import ContentBox from '../components/ContentBox';
+import ContentBoxLogin from '../components/ContentBoxLogin';
 import Footer from '../components/Footer';
 
 
@@ -8,7 +8,7 @@ function Login() {
 return (
     <>
         <Navbar />
-        <ContentBox />
+        <ContentBoxLogin />
         <Footer />
     </>
 );

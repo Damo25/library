@@ -66,6 +66,42 @@
     height: 100vh;
     padding: '20px';
   }
+  .content-box-login{
+    background-Color: #c68c53;
+    width: 1200px;
+    height: 600px;
+    justify-Content: center;
+    align-Items: center;
+    text-Align: center;
+    border-Radius: 20px;
+    border: 10px solid #4d2800;
+    padding: 20px;
+  }
+  .box-container-login{
+    display: flex;
+    justify-Content: center;
+    align-Items: center;
+    height: 100vh;
+    padding: '20px';
+  }
+  .content-box-register{
+    background-Color: #c68c53;
+    width: 1200px;
+    height: 600px;
+    justify-Content: center;
+    align-Items: center;
+    text-Align: center;
+    border-Radius: 20px;
+    border: 10px solid #4d2800;
+    padding: 20px;
+  }
+  .box-container-register{
+    display: flex;
+    justify-Content: center;
+    align-Items: center;
+    height: 100vh;
+    padding: '20px';
+  }
 
   .search-wrapper{
     width: 80%;
