@@ -3,7 +3,8 @@
 @import "tailwindcss/utilities";
 
 body {
-  background-Color: #c68c53;
+  @apply bg-cover bg-center;
+  background-image: url('./Images/library.jpg');
 }
 
 code {
