@@ -9,6 +9,7 @@ const ContentBoxRegister = () => {
       <div className='content-box-register'>
         <h1>SignUp</h1>  
         <form className="login-form">
+
         <div className="form-group">
             <label htmlFor="Forename">Forename:</label>
             <input type="text" id="forename" name="username" placeholder="Enter your forename" />
