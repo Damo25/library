@@ -1,3 +1,93 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.box {
+  background-color: "#c68c53";
+  width: "1200px";
+  height: "600px";
+  justify-content: "center";
+  align-items: "center";
+  text-align: "center";
+  border-radius: "20px";
+  border: "10px solid #4d2800";
+  padding: "20px";
+}
+  .navbar {
+    width: 100%;
+    height: 80px;
+    background-color: #4d2800;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 15px;
+  }
+
+  .navbar-link {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer{
+    width: 100%;
+    height: 80px;
+    background-Color:#4d2800;
+    color: white;
+    display: flex;
+    align-Items: center;
+    justify-Content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-Index: 1000;
+  }
+
+  .content-box{
+    background-Color: #c68c53;
+    width: 1200px;
+    height: 600px;
+    justify-Content: center;
+    align-Items: center;
+    text-Align: center;
+    border-Radius: 20px;
+    border: 10px solid #4d2800;
+    padding: 20px;
+  }
+  .box-container{
+    display: flex;
+    justify-Content: center;
+    align-Items: center;
+    height: 100vh;
+    background-Color: #f0f0f0;
+    padding: '20px';
+  }
+
+  .search-wrapper{
+    width: 80%;
+    max-Width: 600px;
+    margin-Top: 20px;
+    display: flex;
+    justify-Content: center;
+  }
+
+  .search-bar{
+
+  }
+
