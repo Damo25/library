@@ -6,7 +6,9 @@ import sqlite3
 
 app=Flask(__name__)
 
-
+@app.route('/')
+def index():
+    return render_template('testPage.html')
 
 @app.route('/',methods=["GET","POST"],)
 def Login():
@@ -15,7 +17,8 @@ def Login():
         passwordInp=request.form.get("password")
 
         if userNameInp=="":
-            return render_template('testPage.html')#stops crash on empty input
+            #return render_template('testPage.html')#stops crash on empty input
+            return render_template('SignUp.html')# test for current
 
         userSplit=list(userNameInp)#converts userID into database table name
         userID=1
@@ -47,22 +50,21 @@ def Login():
             loginOutcome=False
             if password==passwordInp:
                 loginOutcome=True
-                return str(loginOutcome)
+                return loginOutcome
             else:
                 loginOutcome=False
             return render_template('testPage.html')#restarts if false
         
         except sqlite3.OperationalError:#for if table in db doesnt exist or error
             connection.close()
-            return render_template('testPage.html')
+            return loginOutcome
         
     return render_template('testPage.html')
 
 
-@app.route('/',methods=["GET","POST"],)
+@app.route('/SignUp/',methods=["GET","POST"],)
 def signUp():
     if request.method=="POST":
-
         forename=request.form.get("forename")
         surname=request.form.get("surname")
         email=request.form.get("email")
@@ -77,11 +79,13 @@ def signUp():
 
         connection=sqlite3.connect('./Database/User.db')
         cursor=connection.cursor()
-        allTables="""SELECT name FROM sqlite_master WHERE type='table';"""
-        cursor.execute(allTables)
-        tablesArr=cursor.fetchall
-        newUserID=len(tablesArr)+1#creates new userID by counting all tables and adding one
-        tablesArr=[]
+        for i in range(26*26*26*26*9*9):#checks to see if it can pull a userID up to max amount of accounts
+            tableCount="""SELECT UserID FROM [%s]"""%str(i+1)#checks each to allow for account deletion
+            try:
+                cursor.execute(tableCount)
+            except:
+                newUserID=i+1#adds one to amount counted and stops the loop
+                break
 
         newUserTable="""CREATE TABLE IF NOT EXISTS [%s](
         UserID VARCHAR,
@@ -101,42 +105,59 @@ def signUp():
         );"""%newUserID
         cursor.execute(newUserTable)
         cursor.execute("""INSERT INTO [%s] (UserID,Privilege,Forename,Surname,Email,PhoneNumber,Password,Age,Address,Postcode,MainLib,Item1ID,Item2ID,Item3ID)
-                    values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)"""%newUserTable,(newUserTable,"customer",forename,surname,email,phoneNum,password,age,address,postCode,mainLib,itemID,itemID,itemID))
+                    values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)"""%newUserID,(newUserID,"customer",forename,surname,email,phoneNum,password,age,address,postCode,mainLib,itemID,itemID,itemID))
         connection.commit()
         connection.close()
+        return "new user created"
+    return render_template('SignUp.html')
 
+
+@app.route('/itemSearch/',methods=["GET","POST"],)
 def itemSearch():
-    #look up user's mainLib
-    # select * from [%s] and show that first if userID=0 %lib
-    # select ? from ? where userID=0,(item,lib)
-    # return all
-    testUserID=10
-    mainLibPull="""SELECT MainLib FROM [%s]"""%testUserID#only use this if nothing is passed from frontend
-    connectionUser=sqlite3.connect('./Database/User.db')
-    cursorUser=connectionUser.cursor()
-    cursorUser.execute(mainLibPull)
-    mainLib=cursorUser.fetchall()
-    connectionUser.commit()
-    connectionUser.close()
+    if request.method=="POST":
+        inputSearch=request.form.get("Search")
+        testUser=10
+        if inputSearch=="":
+            print
+        else:
+            conItem=sqlite3.connect('./Database/items.db')
+            curItem=conItem.cursor()
+            itemStatement="""SELECT * FROM ITEMS WHERE ItemName=='[%s]'"""%inputSearch
+            curItem.execute(itemStatement)
+            itemDescript=curItem.fetchall()
+            itemIDRequest="""SELECT ItemID FROM ITEMS WHERE ItemName=='[%s]'"""%inputSearch
+            curItem.execute(itemIDRequest)
+            itemID=str(curItem.fetchall())
+            itemID=itemID.replace('[(','')
+            itemID=itemID.replace(',)]','')
+            conItem.commit()
+            conItem.close()#creates list of descriptors and gets item ID
 
-    connectionLib=sqlite3.connect('./Database/Library.db')
-    cursorLib=connectionLib.cursor()
-    itemSearch="""SELECT ItemID FROM [%s] WHERE UserId=0"""%mainLib
-    cursorLib.execute(itemSearch)
-    itemArr=cursorLib.fetchall()
-    connectionLib.commit()
-    connectionLib.close()
+            conUser=sqlite3.connect('./Database/User.db')
+            curUser=conUser.cursor()
+            mainLibSearch="""SELECT MainLib FROM [%s]"""%str(testUser)
+            curUser.execute(mainLibSearch)
+            mainLib=str(curUser.fetchall())
+            mainLib=mainLib.replace('[(','')
+            mainLib=mainLib.replace(',)]','')
+            conUser.commit()
+            conUser.close()#pulls the users mainLib(temp set to 10 for testing)
 
-    connectionItem=sqlite3.connect('./Database/User.db')
-    cursorItem=connectionItem.cursor()
-    itemAll=[]#seperate the content of this array to display all searched items
-    for i in range(len(itemArr)):
-        itemExpand="""SELECT (ItemName,Author,Type,Blurb,NumWords) FROM ITEMS WHERE ItemID=[%s]"""%itemArr[i]
-        cursorItem.execute(itemExpand)
-        tempItem=cursorItem.fetchall()
-        itemAll.append(tempItem)
-    return itemAll
 
+            conLib=sqlite3.connect('./Database/Library.db')
+            curLib=conLib.cursor()
+            stockCheck="""SELECT UserID FROM [%s]"""%mainLib#,itemID#pulls all records of items if in table
+            curLib.execute(stockCheck)
+            emptyUser=curLib.fetchall()
+            conLib.commit()
+            conLib.close()
+            results=[]
+            for i in range(len(emptyUser)):
+                if emptyUser[i]=="0":#currently identifies no users needs to be used to confirm if a already searched book has no user
+                    results.append(emptyUser[i])
+            return str(emptyUser)
+        
+    return render_template('itemSearch.html')
 
 
 if __name__=="__main__":
