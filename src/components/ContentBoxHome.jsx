@@ -11,6 +11,9 @@ const ContentBox = () => {
         <div className='search-wrapper'>
         <SearchBar />
       </div>
+      <div className='s-b-padding'>
+      <button type="submit" className="login-button">Search</button>
+      </div>
     </div>
   </div>
   );
