@@ -6,7 +6,6 @@ const Seachbar = () => {
         
 <form class="">   
     <label for="default-search" className="">
-        Search
     </label>
     <div class="relative">
         <input type="search" id="default-search" placeholder="Search" required />
