@@ -85,7 +85,7 @@ h3{
     justify-Content: center;
     align-Items: center;
     height: 100vh;
-    padding: '20px';
+    padding: 20px;
   }
   .content-box-login{
     background-Color: #c68c53;
@@ -103,12 +103,12 @@ h3{
     justify-Content: center;
     align-Items: center;
     height: 100vh;
-    padding: '20px';
+    padding: 20px;
   }
   .box-container-register {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     min-height: calc(100vh - 160px); 
     margin-top: 80px; 
     margin-bottom: 80px; 
@@ -189,7 +189,7 @@ h3{
 
   .results-padding{
     padding-top: 5%;
-    padding-left: 3%;
+    padding-left: 24%;
   }
   
   .results-container{
@@ -200,7 +200,6 @@ h3{
     align-items: center;
     display: flex;
     flex-direction: column;
-
     width: 400px;
     height: 270px;
   }
