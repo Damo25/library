@@ -1,5 +1,6 @@
 import React from 'react';
 import Seachbar from './SearchBar';
+import ContentBoxAdminResults from './ContentBoxAdminResults';
 
 
 const ContentBoxAdmin = () => {
@@ -15,7 +16,9 @@ const ContentBoxAdmin = () => {
         <div className='s-b-padding'>
         <button type="submit" className="login-button">Search</button>
         </div>
-      
+        <div className='results-padding'>
+        <ContentBoxAdminResults />
+        </div>
     </div>
   </div>
   );
