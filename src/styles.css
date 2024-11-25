@@ -159,10 +159,15 @@
     cursor: pointer;
     transition: background-color 0.3s;
     align-self: center;
+    
   }
   
   .login-button:hover {
     background-color: #3b2000;
+  }
+
+  .s-b-padding{
+    padding-top: 1%;
   }
   
 

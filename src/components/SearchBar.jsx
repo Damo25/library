@@ -9,8 +9,7 @@ const Seachbar = () => {
     </label>
     <div class="relative">
         <input type="search" id="default-search" placeholder="Search" required />
-        <button type="submit" className="login-button">Search</button> 
-        
+         
     </div>
 </form>
   );
