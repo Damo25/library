@@ -131,7 +131,7 @@ h3{
   }
 
   .search-wrapper{
-    width: 40%;
+    width: 100%;
     max-Width: 600px;
     margin-Top: 20px;
     display: flex;
@@ -139,6 +139,7 @@ h3{
   }
 
   .login-form {
+    width: 100%;
     align-items: center;
     display: flex;
     flex-direction: column;
