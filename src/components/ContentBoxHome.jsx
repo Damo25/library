@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar';
+import ContentBoxHomeResults from './ContentBoxHomeResults';
 
 const ContentBox = () => {
 
@@ -8,12 +9,16 @@ const ContentBox = () => {
     <div className='box-container'>
       <div className='content-box'>
         <h1>Home</h1> 
-        <div className='search-wrapper'>
+        <div>
         <SearchBar />
-      </div>
+        </div>
       <div className='s-b-padding'>
       <button type="submit" className="login-button">Search</button>
       </div>
+      <div className='pt-5'>
+      <ContentBoxHomeResults />
+      </div>
+      
     </div>
   </div>
   );
