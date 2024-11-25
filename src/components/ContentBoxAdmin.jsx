@@ -7,8 +7,8 @@ const ContentBoxAdmin = () => {
 
 
   return (
-    <div className='box-container-login'>
-      <div className='content-box-login'>
+    <div className='box-container'>
+      <div className='content-box'>
         <h1>Admin</h1> 
         <div>
         <Seachbar />
