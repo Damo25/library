@@ -80,6 +80,7 @@ h3{
     border: 7px solid #4d2800;
     padding: 20px;
   }
+
   .box-container{
     display: flex;
     justify-Content: center;
@@ -87,6 +88,7 @@ h3{
     height: 100vh;
     padding: 20px;
   }
+
   .content-box-login{
     background-Color: #c68c53;
     width: 900px;
@@ -98,6 +100,7 @@ h3{
     border: 7px solid #4d2800;
     padding: 60px;
   }
+
   .box-container-login{
     display: flex;
     justify-Content: center;
@@ -105,6 +108,26 @@ h3{
     height: 100vh;
     padding: 20px;
   }
+
+  .content-box-logout{
+    background-Color: #c68c53;
+    width: 900px;
+    height: 600px;
+    justify-Content: center;
+    align-Items: center;
+    text-Align: center;
+    border-Radius: 20px;
+    border: 7px solid #4d2800;
+    padding: 220px;
+  }
+  .box-container-logout{
+    display: flex;
+    justify-Content: center;
+    align-Items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+
   .box-container-register {
     display: flex;
     justify-content: center;
@@ -184,6 +207,26 @@ h3{
   
   .login-button:hover {
     background-color: #3b2000;
+  }
+
+  .logout-button {
+    padding: 12px 20px;
+    background-color: #4d2800;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center; 
+  }
+  
+  .logout-button:hover {
+    background-color: #3b2000;
+  }
+
+  .logout-button-spacing {
+    padding-top: 20px;
   }
 
   .s-b-padding{
