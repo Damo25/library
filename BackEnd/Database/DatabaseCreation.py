@@ -76,7 +76,8 @@ for x in range(len(libList)):
     randomItem=rand.randint(1,1000)
     tempRandUser=rand.randint(1,2106)
 
-    cursor.execute("INSERT INTO [%s] (LibID,ItemID,UserID) VALUES (?,?,?)"%libID,(libID,randomItem,tempRandUser)) 
+    cursor.execute("INSERT INTO [%s] (LibID,ItemID,UserID) VALUES (?,?,?)"%libID,(libID,randomItem,tempRandUser))
+    cursor.execute("INSERT INTO [%s] (LibID,ItemID,UserID) VALUES (?,?,?)"%libID,(libID,randomItem,0))#test data for unclaimed item
     cursor.execute("INSERT INTO LIB_ID(LibID,LibName,Location,OpenTime,CloseTime,NumOfItems) VALUES (?,?,?,?,?,?)",(libList[x],libName,location,openTime,closeTime,numOfItems))
     connection.commit()
 

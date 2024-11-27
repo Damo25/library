@@ -1,14 +1,24 @@
 from flask import Flask,render_template,request
 import sqlite3
 
-#.\SAaDenv\Scripts\activate.bat
-#http://localhost:5000/
-
 app=Flask(__name__)
 
 @app.route('/')
 def index():
     return render_template('testPage.html')
+
+activeUser=0#currently set as variable to save time, turn into function if have extra time 
+
+def loginCheck():#For checking that a user is viewing with an account
+    activeUserCheck=activeUser
+    if activeUserCheck==0:
+        return render_template('guest.html')
+        #sends user to guest page--see guest app for more info
+    else:
+        return str(activeUserCheck)
+        #returns as string so other functions can use to connect to specific table
+
+
 
 @app.route('/',methods=["GET","POST"],)
 def Login():
@@ -47,17 +57,18 @@ def Login():
             password=password.replace("[('","")
             password=password.replace("',)]","")#strips password to same format as input
 
-            loginOutcome=False
+            loginOutcome="False"
             if password==passwordInp:
-                loginOutcome=True
-                return loginOutcome
+                global activeUser
+                activeUser=int(userID)#sets active user as logged in user
+                return loginCheck()
             else:
                 loginOutcome=False
             return render_template('testPage.html')#restarts if false
         
         except sqlite3.OperationalError:#for if table in db doesnt exist or error
             connection.close()
-            return loginOutcome
+            return "account does not exist"
         
     return render_template('testPage.html')
 
@@ -116,26 +127,22 @@ def signUp():
 def itemSearch():
     if request.method=="POST":
         inputSearch=request.form.get("Search")
-        testUser=10
         if inputSearch=="":
             print
         else:
             conItem=sqlite3.connect('./Database/items.db')
             curItem=conItem.cursor()
-            itemStatement="""SELECT * FROM ITEMS WHERE ItemName=='[%s]'"""%inputSearch
-            curItem.execute(itemStatement)
-            itemDescript=curItem.fetchall()
             itemIDRequest="""SELECT ItemID FROM ITEMS WHERE ItemName=='[%s]'"""%inputSearch
             curItem.execute(itemIDRequest)
             itemID=str(curItem.fetchall())
             itemID=itemID.replace('[(','')
             itemID=itemID.replace(',)]','')
             conItem.commit()
-            conItem.close()#creates list of descriptors and gets item ID
+            conItem.close()
 
             conUser=sqlite3.connect('./Database/User.db')
             curUser=conUser.cursor()
-            mainLibSearch="""SELECT MainLib FROM [%s]"""%str(testUser)
+            mainLibSearch="""SELECT MainLib FROM [%s]"""%str(activeUser)
             curUser.execute(mainLibSearch)
             mainLib=str(curUser.fetchall())
             mainLib=mainLib.replace('[(','')
@@ -146,19 +153,34 @@ def itemSearch():
 
             conLib=sqlite3.connect('./Database/Library.db')
             curLib=conLib.cursor()
-            stockCheck="""SELECT UserID FROM [%s]"""%mainLib#,itemID#pulls all records of items if in table
+            stockCheck="""SELECT ItemID FROM [%s] WHERE UserID==0"""%mainLib#pulls all records of items if in table
             curLib.execute(stockCheck)
-            emptyUser=curLib.fetchall()
+            emptyItem=curLib.fetchall()
             conLib.commit()
             conLib.close()
-            results=[]
-            for i in range(len(emptyUser)):
-                if emptyUser[i]=="0":#currently identifies no users needs to be used to confirm if a already searched book has no user
-                    results.append(emptyUser[i])
-            return str(emptyUser)
+
+            result=[]
+            conItem=sqlite3.connect('./Database/items.db')
+            curItem=conItem.cursor()
+            for i in range(len(emptyItem)):#cycles through all possible items with no users
+                test=str(emptyItem[i])
+                test=test.replace('(','')
+                test=test.replace(',)','')
+                itemDescriptor="""SELECT * FROM ITEMS WHERE ItemID=="""+test#needs to be added as a string after in this fashion or crash
+                curItem.execute(itemDescriptor)
+                itemInfo=curItem.fetchall()
+                result.append(itemInfo)#makes list of all descriptors
+
+            conItem.commit()
+            conItem.close()
+
+            return str(result)
         
     return render_template('itemSearch.html')
 
+@app.route('/guest/',methods=["GET","POST"],)
+def guest():
+    return render_template('guest.html')#fill this out depending on guest ideas--possibly search--possibly send to login
 
 if __name__=="__main__":
     app.run(debug=True)
