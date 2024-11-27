@@ -20,7 +20,7 @@ def loginCheck():#For checking that a user is viewing with an account
 
 
 
-@app.route('/',methods=["GET","POST"],)
+@app.route('/login',methods=["GET","POST"],)
 def Login():
     if request.method=="POST":
         userNameInp=request.form.get("userName")#pulls info from submit
@@ -61,19 +61,19 @@ def Login():
             if password==passwordInp:
                 global activeUser
                 activeUser=int(userID)#sets active user as logged in user
-                return loginCheck()
+                return "test123"#loginCheck()
             else:
                 loginOutcome=False
-            return render_template('testPage.html')#restarts if false
+            return "render_template('testPage.html')"#restarts if false
         
         except sqlite3.OperationalError:#for if table in db doesnt exist or error
             connection.close()
             return "account does not exist"
         
-    return render_template('testPage.html')
+    return "login_test_Json_fail"
 
 
-@app.route('/SignUp/',methods=["GET","POST"],)
+@app.route('/SignUp',methods=["GET","POST"],)
 def signUp():
     if request.method=="POST":
         forename=request.form.get("forename")
@@ -120,10 +120,10 @@ def signUp():
         connection.commit()
         connection.close()
         return "new user created"
-    return render_template('SignUp.html')
+    return "SignUp_test_Json_fail"
 
 
-@app.route('/itemSearch/',methods=["GET","POST"],)
+@app.route('/itemSearch',methods=["GET","POST"],)
 def itemSearch():
     if request.method=="POST":
         inputSearch=request.form.get("Search")
@@ -176,11 +176,17 @@ def itemSearch():
 
             return str(result)
         
-    return render_template('itemSearch.html')
+    return "itemSearch_test_Json_fail"
 
-@app.route('/guest/',methods=["GET","POST"],)
+@app.route('/guest',methods=["GET","POST"],)
 def guest():
     return render_template('guest.html')#fill this out depending on guest ideas--possibly search--possibly send to login
+
+@app.route('/logout',methods=["GET","POST"],)
+def logout():
+    global activeUser
+    activeUser=0
+    return "logged out"
 
 if __name__=="__main__":
     app.run(debug=True)
