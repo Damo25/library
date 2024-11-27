@@ -68,3 +68,25 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+#Getting started with python's Flask webframe
+
+The backend of this project was created with python, specifically by using the Flask webframe
+
+## Available Scripts
+
+In the project directory, you can run:
+
+###'cd .\library\BackEnd\SAadenv\Scripts'
+
+this connects terminal being used into the virtual enviroment
+
+###'activate.bat'
+
+This activates the virtual enviroment
+
+###'cd \library\BackEnd'
+
+###'python Main.py'
+
+this wont be needed when 
