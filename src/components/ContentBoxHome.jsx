@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import SearchBar from './SearchBar';
 import ContentBoxHomeResults from './ContentBoxHomeResults';
 
@@ -13,7 +13,13 @@ const ContentBox = () => {
         <SearchBar />
         </div>
       <div className='s-b-padding'>
-      <button type="submit" className="login-button">Search</button>
+      <button type="submit" className="login-button" onClick={async()=>{
+            const response= await fetch("/itemSearch",
+              {method: "POST",
+              body: JSON.stringify()});
+              if (response.ok) {
+                console.log(response);}//this is happening just is normally to quick to console log
+            }}>Search</button>
       </div>
       <div className='pt-5'>
       <ContentBoxHomeResults />

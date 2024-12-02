@@ -7,13 +7,15 @@ import { data } from 'react-router-dom';
 
 function Login() {
 
+    const[data,setData]=useState([{}]);
+
     useEffect(()=>{//fetch /login function from proxity server
-        fetch("/login").then((res)=>
-            res.json().then((data)=>{
-                //allegedly putting data being sent here should pair?
-                //is definetly working as proxity as rendering whole page
-            })
-        );
+        fetch("/login").then(
+            res=>res.json()).then(data=>{
+                setData(data)
+                console.log(data)
+            }
+           )
     },[]);
 
 return (

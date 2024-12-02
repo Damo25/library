@@ -7,7 +7,7 @@ app=Flask(__name__)
 def index():
     return render_template('testPage.html')
 
-activeUser=0#currently set as variable to save time, turn into function if have extra time 
+activeUser=10#currently set as variable to save time, turn into function if have extra time 
 
 def loginCheck():#For checking that a user is viewing with an account
     activeUserCheck=activeUser
@@ -23,11 +23,10 @@ def loginCheck():#For checking that a user is viewing with an account
 @app.route('/login',methods=["GET","POST"],)
 def Login():
     if request.method=="POST":
-        userNameInp=request.form.get("userName")#pulls info from submit
+        userNameInp=request.form.get("username")#pulls info from submit
         passwordInp=request.form.get("password")
 
         if userNameInp=="":
-            #return render_template('testPage.html')#stops crash on empty input
             return render_template('SignUp.html')# test for current
 
         userSplit=list(userNameInp)#converts userID into database table name
@@ -68,9 +67,8 @@ def Login():
         
         except sqlite3.OperationalError:#for if table in db doesnt exist or error
             connection.close()
-            return "account does not exist"
-        
-    return "login_test_Json_fail"
+            return "account does not exist2"
+    return {"tests":[str(activeUser),"test2","test3"]}
 
 
 @app.route('/SignUp',methods=["GET","POST"],)
@@ -170,13 +168,13 @@ def itemSearch():
                 curItem.execute(itemDescriptor)
                 itemInfo=curItem.fetchall()
                 result.append(itemInfo)#makes list of all descriptors
-
             conItem.commit()
             conItem.close()
 
-            return str(result)
+            return {"items":[str(result)]}
+
         
-    return "itemSearch_test_Json_fail"
+    #return "itemSearch_test_Json_fail"
 
 @app.route('/guest',methods=["GET","POST"],)
 def guest():

@@ -6,12 +6,15 @@ import Footer from '../components/Footer';
 
 function Home() {
 
-    useEffect(()=>{//fetch /login function from proxity server
-        fetch("/itemSearch").then((res)=>
-            res.json().then((data)=>{
-                //insert data here
-            })
-        );
+    const[data,setData]=useState([{}]);
+
+    useEffect(()=>{
+        fetch("/http://localhost:5000/itemSearch").then(
+            res=>res.json()).then(data=>{
+                setData(data)
+                console.log(data)
+            }
+           )
     },[]);
 
 return (
