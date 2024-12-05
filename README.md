@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Getting Started with Create React App and Python Flask
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and python using the flask webframe
 
 ## Available Scripts
 
