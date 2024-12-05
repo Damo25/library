@@ -73,20 +73,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 The backend of this project was created with python, specifically by using the Flask webframe
 
-## Available Scripts
+## For activating the BackEnd
 
 In the project directory, you can run:
 
-###'cd .\library\BackEnd\SAadenv\Scripts'
+### 'cd .\library\BackEnd\SAadenv\Scripts'
 
 this connects terminal being used into the virtual enviroment
 
-###'activate.bat'
+### 'activate.bat'
 
 This activates the virtual enviroment
 
-###'cd \library\BackEnd'
+### 'cd \library\BackEnd'
 
-###'python Main.py'
+This redirects to the entire backend which will allow the user to run files
 
-this wont be needed when 
+### 'python Main.py'
+ 
+The backend is now active
