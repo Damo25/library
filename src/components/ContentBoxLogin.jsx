@@ -30,10 +30,8 @@ const ContentBoxLogin = () => {
               body: JSON.stringify(logInput)});
               if (response.ok) {
                 console.log("test123");}//this is happening just is normally to quick to console log
-
             }}>Log In</button>
-
-
+            
         </form>
     </div>
   </div>

@@ -9,7 +9,7 @@ function Home() {
     const[data,setData]=useState([{}]);
 
     useEffect(()=>{
-        fetch("/http://localhost:5000/itemSearch").then(
+        fetch("/itemSearch").then(
             res=>res.json()).then(data=>{
                 setData(data)
                 console.log(data)
