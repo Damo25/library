@@ -49,6 +49,19 @@ h3{
     z-index: 1000;
   }
 
+  .navbarHome{
+    width: 400px;
+    height: 80px;
+    background-color: #4d2800;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 1000;
+  }
+
   .navbar-logo {
     font-size: 1.5rem;
     font-weight: bold;
