@@ -4,7 +4,7 @@ import ContentBoxNon from '../components/ContentBoxHome';
 import Footer from '../components/Footer';
 
 
-function Home() {
+function NonRegisteredHome() {
 return (
     <>
         <NavbarNon />
@@ -14,4 +14,4 @@ return (
 );
 };
 
-export default Home;
+export default NonRegisteredHome;

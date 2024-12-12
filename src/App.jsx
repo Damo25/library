@@ -7,7 +7,7 @@ import Admin from "./pages/Admin";
 import Logout from "./pages/Logout";
 import ContentBoxAdminResults from './components/ContentBoxAdminResults';
 import ContentBoxAdminUserResults from './components/ContentBoxAdminUserResults';
-import NonRegisteredHome from './pages/NonRegisteredHome';
+import NonRegisteredHome from "./pages/NonRegisteredHome";
 
 function App() {
   return (
