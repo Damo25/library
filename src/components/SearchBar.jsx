@@ -8,7 +8,7 @@ const Seachbar = () => {
     <label for="default-search" className="">
     </label>
     <div class="relative">
-        <input type="search" id="default-search" placeholder="Search" required />
+        <input type="search" id="default-search" placeholder="J.R.R Tolkien" required />
     </div>
 </form>
   );
