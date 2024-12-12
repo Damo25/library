@@ -37,14 +37,16 @@ h3{
   }
 
   .navbarAdmin{
-    width: 100%;
+    width: 400px;
     height: 80px;
     background-color: #4d2800;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 1000;
   }
 
   .navbar-logo {
@@ -85,11 +87,13 @@ h3{
     display:flex;
     flex-direction: column;
     justify-Content: center;
-    align-Items: center;
     text-Align: center;
     border-Radius: 20px;
-    border: 7px solid #4d2800;
-    padding: 20px;
+    border: 7px solid #4d2800;;
+  }
+
+  .align{
+    align-Items: center;
   }
 
   .box-container{
