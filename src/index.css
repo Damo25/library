@@ -1,7 +1,7 @@
 
 body {
   @apply bg-cover bg-center;
-  background-image: url('./Images/library.jpg');
+  background-image: url(../public/Images/library.jpg);
 }
 
 code {
