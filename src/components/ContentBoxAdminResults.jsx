@@ -18,8 +18,15 @@ const ContentBoxAdminResults = () => {
       image: '/Images/exterior-of-leeds-central.jpg',
       DaysOpen:"Monday-Sunday",
     },
-  
-  ];
+    {
+      id: 2,
+      title: 'Lincoln  Library',
+      location: 'Lincoln',
+      image: '/Images/lincoln-central-library-e1534863618244.jpg',
+      DaysOpen:"Monday-Sunday",
+    },
+
+  ]
   
 
 

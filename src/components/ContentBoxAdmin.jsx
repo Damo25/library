@@ -1,6 +1,7 @@
 import React from 'react';
 import Seachbar from './SearchBar';
 import ContentBoxAdminResults from './ContentBoxAdminResults';
+import NavbarAdmin from './NavbarAdmin';
 
 
 const ContentBoxAdmin = () => {
@@ -9,8 +10,8 @@ const ContentBoxAdmin = () => {
   return (
     <div className='box-container'>
       <div className='content-box'>
-        <h1>Admin</h1> 
         <div>
+        <NavbarAdmin /> 
         <Seachbar />
         </div>
         <div className='s-b-padding'>
