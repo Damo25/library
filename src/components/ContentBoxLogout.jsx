@@ -9,7 +9,7 @@ const ContentBoxLogout = () => {
       <div className='content-box-logout'>
         <h1>Are you sure you want to log out?</h1> 
       <div className='logout-button-spacing'>
-        <Link to="/home" className="logout-button">
+        <Link to="/NonRegisteredHome" className="logout-button">
           Log Out
         </Link>
       </div>
