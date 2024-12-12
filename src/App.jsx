@@ -7,12 +7,13 @@ import Admin from "./pages/Admin";
 import Logout from "./pages/Logout";
 import ContentBoxAdminResults from './components/ContentBoxAdminResults';
 import ContentBoxAdminUserResults from './components/ContentBoxAdminUserResults';
+import NonRegisteredHome from './pages/NonRegisteredHome';
 
 function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<Navigate to="/signup" />} />
+      <Route path="/" element={<Navigate to="/NonRegisteredHome" />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/Home" element={<Home />} />
       <Route path="/Login" element={<Login />} />
@@ -20,6 +21,7 @@ function App() {
       <Route path="/Logout" element={<Logout />} />
       <Route path="/admin-results" element={<ContentBoxAdminResults />} />
       <Route path="/user-admin" element={<ContentBoxAdminUserResults />} />
+      <Route path="/NonRegisteredHome" element={<NonRegisteredHome />} />
       </Routes>
     </Router>
   );
