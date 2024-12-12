@@ -19,9 +19,7 @@ const ContentBoxAdminResults = () => {
       DaysOpen:"Monday-Sunday",
     },
   
- 
-
-  ]
+  ];
   
 
 
