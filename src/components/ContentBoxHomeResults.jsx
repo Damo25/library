@@ -36,6 +36,7 @@ const ContentBoxHomeResults = () => {
             />
             <h3 className="text-xl font-semibold mb-2">{book.title}</h3>
             <p className="text-gray-700">Author: {book.author}</p>
+            <button type="submit" className="login-button">Add</button>
           </div>
         ))}
       </div>
