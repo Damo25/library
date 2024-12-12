@@ -1,22 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import ContentBoxAdminResults from './ContentBoxAdminResults';
+import ContentBoxAdminUserResults from './ContentBoxAdminUserResults';
 
 const NavbarAdmin = () => {
+  const [activeComponent, setActiveComponent] = useState('Library');
+
+  const renderComponent = () => {
+    switch (activeComponent) {
+      case 'Library':
+        return <ContentBoxAdminResults />;
+      case 'Users':
+        return <ContentBoxAdminUserResults />;
+      default:
+        return <div>Select a section</div>;
+    }
+  };
+
   return (
-    <div className="navbarAdmin tranclucent">
-      <Link to="/ContentBoxAdminResults" className="navbar-logo">
-        Library
-      </Link>
-      <div className="navbar-links">
-      <Link to="/ContentBoxUserAdmin" className="navbar-link">
-          Library
-        </Link>
-        <Link to="/ContentBoxAdminResults" className="navbar-link">
-          Users
-        </Link>
+    <div>
+      <div className="navbarAdmin tranclucent">
+        <div className="navbar-links">
+          <div className="navbar-link" onClick={() => setActiveComponent('Library')}>
+            Library
+          </div>
+          <div className="navbar-link" onClick={() => setActiveComponent('Users')}>
+            Users
+          </div>
+        </div>
       </div>
+      <div className="component-container">{renderComponent()}</div>
     </div>
   );
 };
 
 export default NavbarAdmin;
+
+
+

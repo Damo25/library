@@ -1,5 +1,4 @@
 import React from 'react';
-import ContentBoxAdminResults from './ContentBoxAdminResults';
 import NavbarAdmin from './NavbarAdmin';
 import SeachbarAdmin from './searchBarAdmin';
 
@@ -13,7 +12,6 @@ const ContentBoxAdmin = () => {
       <div className='content-box align'>
         <div className='results-padding'>
         <NavbarAdmin /> 
-        <ContentBoxAdminResults />
         </div>
         <div className='flex pt-1'>
           <div>

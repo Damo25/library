@@ -5,6 +5,8 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import Logout from "./pages/Logout";
+import ContentBoxAdminResults from './components/ContentBoxAdminResults';
+import ContentBoxAdminUserResults from './components/ContentBoxAdminUserResults';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Route path="/Login" element={<Login />} />
       <Route path="/Admin" element={<Admin />} />
       <Route path="/Logout" element={<Logout />} />
+      <Route path="/admin-results" element={<ContentBoxAdminResults />} />
+      <Route path="/user-admin" element={<ContentBoxAdminUserResults />} />
       </Routes>
     </Router>
   );
