@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 const ContentBoxLogin = () => {
 
@@ -17,7 +17,11 @@ const ContentBoxLogin = () => {
             <label htmlFor="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" />
           </div>
-          <button type="submit" className="login-button">Log In</button>
+          <div className='logout-button-spacing'>
+                  <Link to="/Home" className="logout-button">
+                    Log In
+                  </Link>
+                </div>
         </form>
     </div>
   </div>
