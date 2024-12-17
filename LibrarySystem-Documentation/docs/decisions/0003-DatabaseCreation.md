@@ -37,8 +37,8 @@ Chosen option: "large scale users and small scale admin", because this can accur
 
 The implementation of the Databases will be validated by:
 
-*Integrated testing: Ensuring that the backend can communicate with the database files through SQLite
-*Code reviews: Making sure that code commuincating with the databases and the database files are clear and consistent
+* Integrated testing: Ensuring that the backend can communicate with the database files through SQLite
+* Code reviews: Making sure that code commuincating with the databases and the database files are clear and consistent
 
 ## Pros and Cons of the Options
 
