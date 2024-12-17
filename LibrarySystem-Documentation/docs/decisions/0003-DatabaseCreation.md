@@ -35,14 +35,20 @@ Chosen option: "large scale users and small scale admin", because this can accur
 
 ### Confirmation
 
+The implementation of the Databases will be validated by:
 
+*Integrated testing: Ensuring that the backend can communicate with the database files through SQLite
+*Code reviews: Making sure that code commuincating with the databases and the database files are clear and consistent
 
 ## Pros and Cons of the Options
 
-### <!-- title of option -->
+### Large scale
 
-* Good, because
-* Neutral, because
-* Bad, because
+* Good, because it allows for a testing of many different error cases before roll out to the public
+* Bad, because it takes a much large amount of time to create because this will need to be an automated process
 
-## More Information
+  ### Small scale
+
+* Good, because it takes less time away from development while allowing the developers to test for specific cases they wish to research
+* Bad, because if developers only test a limited amount of data there can be errors in the code which the developers might not find until the product is rolled out to the public
+
