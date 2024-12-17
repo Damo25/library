@@ -1,108 +1,108 @@
 ---
 status: "Active"
-date: {2024/12/09}
+date: {2024/12/17}
 decision-makers: {John Webb, Damian Knight}
-consulted: {Everyone}
+consulted: {Frontend Team, Backend Team, Everyone}
 informed: {Everyone}
 ---
 
-# Microkernel Architecture for System Design
+# Two-Tier Client-Server Architecture for System Design
 
 ## Context and Problem Statement
 
-The architecture for the system must be chosen to meet critical requirements such as 24/7 availability, high capacity, user-friendly design, robust security, scalability, and stability. The system needs to manage large-scale data and user requests, while maintaining performance and usability for various stakeholders. Given these requirements, the choice of architecture will significantly influence the success of the project.
+The system architecture must support the development of a web application requiring clear separation of concerns, efficient collaboration between teams, and scalability to handle growth. The project includes distinct frontend and backend components managed by dedicated teams. Selecting an appropriate architecture will ensure smooth development, deployment, and maintenance.
 
 ---
 
 ## Decision Drivers
 
-* **Availability**: The system must operate with 24/7 uptime and no downtime.  
-* **Capacity**: Support a large-scale user base and simultaneously manage a high volume of data.  
-* **Usability**: Provide a simple, intuitive UI suitable for all users, with features for specific searches.  
-* **Security**: Uphold GDPR compliance and secure both guest and admin credentials.  
-* **Scalability**: Handle multiple requests simultaneously and expand server capacity as needed.  
-* **Stability**: Ensure consistent communication between front-end and back-end with no crashes or bugs.
+* **Separation of Concerns**: Maintain a clean division between the frontend and backend to support independent development.
+* **Team Collaboration**: Enable efficient communication and workflow between the frontend and backend teams.
+* **Scalability**: Ensure the system can handle increasing user loads and data demands.
+* **Maintainability**: Simplify debugging, updates, and testing by isolating issues to the client or server layer.
+* **Performance**: Provide a responsive user experience and ensure efficient data communication.
 
 ---
 
 ## Considered Options
 
 1. **Monolithic Architecture**  
-2. **Microservices Architecture**  
-3. **Microkernel (Plug-in) Architecture**
+2. **Two-Tier Client-Server Architecture**  
+3. **Microservices Architecture**
 
 ---
 
 ## Decision Outcome
 
-**Chosen Option**: **Microkernel Architecture**
+**Chosen Option**: **Two-Tier Client-Server Architecture**
 
-The Microkernel Architecture is best suited to meet the project requirements. Its modular nature allows the system's core (kernel) to remain stable while supporting independent plug-ins for features like user interface, database management, and additional functionalities. This ensures scalability, stability, and extensibility, making it ideal for a system with high availability and capacity demands.
+The Two-Tier Client-Server Architecture aligns with the project requirements. By separating the frontend (client) and backend (server), the architecture enables focused development and ensures scalability, maintainability, and performance. The backend serves as a central data and logic repository, while the frontend handles the user interface and interaction.
 
 ---
 
 ### Consequences
 
 * **Good**:  
-  * Modular design isolates core functionalities, reducing the risk of system-wide failures.  
-  * Easily extendable, supporting new features or plug-ins without impacting the kernel.  
-  * Improved system stability and security with a streamlined core.
+  * Clear separation of concerns enables parallel development by frontend and backend teams.  
+  * Simplifies debugging and maintenance by isolating issues to the client or server layer.  
+  * Efficient communication through well-documented APIs ensures smooth data exchange.  
+  * Scalable design supports future growth in users and features.
 
 * **Bad**:  
-  * Initial setup and kernel development may be complex and time-consuming.  
-  * Communication between kernel and plug-ins may introduce minor performance overhead.
+  * Frontend and backend teams must align closely on API specifications and updates.  
+  * Backend performance becomes a bottleneck if not optimized for high load.
 
 ---
 
 ### Confirmation
 
-The implementation of the Microkernel Architecture will be validated through:  
-- **Load testing** to ensure uptime and capacity requirements are met.  
-- **Usability testing** for a clear and self-explanatory UI.  
-- **Security audits** to confirm GDPR compliance and credential protection.  
-- **Scalability tests** to handle simultaneous requests and expand server capabilities.
+The implementation of the Two-Tier Client-Server Architecture will be validated through:  
+- **Integration Testing**: Verify API communication between frontend and backend.  
+- **Load Testing**: Ensure backend performance under high user loads.  
+- **User Acceptance Testing**: Confirm a seamless and responsive user experience.  
+- **Code Reviews**: Maintain clean, consistent, and modular codebases for both layers.
 
 ---
 
 ## Pros and Cons of the Options
 
-### Monolithic Architecture  
+### Monolithic Architecture
 
 * **Good**:  
-  * Simple and quick to implement for small-scale systems.  
-  * Efficient communication between tightly integrated components.
+  * Simple implementation for small-scale systems.  
+  * Unified codebase for tightly coupled components.  
 
 * **Bad**:  
-  * Poor scalability and limited modularity.  
-  * Challenging to maintain and update for large-scale systems.  
+  * Poor scalability for larger systems.  
+  * Difficult to maintain and update due to tight coupling.
 
 ---
 
-### Microservices Architecture  
+### Two-Tier Client-Server Architecture
 
 * **Good**:  
-  * Independent services allow for high scalability and fault isolation.  
-  * Well-suited for distributed systems.
+  * Supports independent development of client and server components.  
+  * Facilitates scalability and modular design.  
+  * Easier debugging and maintenance with clear separation of layers.
+
+* **Bad**:  
+  * Requires precise coordination between frontend and backend teams.  
+  * Backend performance must be optimized to avoid bottlenecks.
+
+---
+
+### Microservices Architecture
+
+* **Good**:  
+  * High scalability and fault isolation through independent services.  
+  * Ideal for complex, distributed systems with diverse functionalities.
 
 * **Bad**:  
   * High complexity in managing inter-service communication.  
-  * Potential latency issues due to distributed nature.
-
----
-
-### Microkernel Architecture  
-
-* **Good**:  
-  * Modular design ensures stability and ease of maintenance.  
-  * Scales well with additional features or users.  
-  * Clear separation of concerns between the kernel and plug-ins.
-
-* **Bad**:  
-  * Requires a robust and well-thought-out kernel design.  
-  * Slight performance overhead from module-to-kernel communication.
+  * Requires significant infrastructure and management overhead.
 
 ---
 
 ## More Information
 
-The Microkernel Architecture provides the flexibility and reliability needed to meet the project requirements. By isolating the kernel and extending functionalities via plug-ins, the system can ensure uptime, security, and scalability while catering to a large and diverse user base.
+The Two-Tier Client-Server Architecture provides a practical solution for the project, enabling effective collaboration, modularity, and scalability. By leveraging this architecture, the system can grow to meet user demands while maintaining performance and maintainability.
