@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-
+import { Link } from 'react-router-dom';
 
 const ContentBoxLogin = () => {
 
@@ -20,18 +20,11 @@ const ContentBoxLogin = () => {
             <label htmlFor="password">Password:</label>
             <input type="password" id="password" name="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="Enter your password" />
           </div>
-
-
-          <button type="submit" className="login-button" onClick={async()=>{//this should be sending it across
-            const logInput={username,password};
-            const response= await fetch("/login",
-              {method: "POST"
-              ,
-              body: JSON.stringify(logInput)});
-              if (response.ok) {
-                console.log("test123");}//this is happening just is normally to quick to console log
-            }}>Log In</button>
-            
+          <div className='logout-button-spacing'>
+                  <Link to="/Home" className="logout-button">
+                    Log In
+                  </Link>
+                </div>
         </form>
     </div>
   </div>
