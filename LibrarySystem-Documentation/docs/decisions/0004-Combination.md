@@ -36,8 +36,8 @@ Chosen option: "POST fetch request", because this allows for us to follow our ar
 
 The implementation of the Databases will be validated by:
 
--Integrated testing: Ensuring that the frontend can communicate with the backend files effectively once a fetch request has been sent 
--Code reviews: Making sure that code commuincating with the frontend and Backend files are clear and consistent
+* Integrated testing: Ensuring that the frontend can communicate with the backend files effectively once a fetch request has been sent 
+* Code reviews: Making sure that code commuincating with the frontend and Backend files are clear and consistent
 
 ## Pros and Cons of the Options
 
