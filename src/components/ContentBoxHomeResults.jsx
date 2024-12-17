@@ -13,13 +13,13 @@ const ContentBoxHomeResults = () => {
       id: 2,
       title: 'The Two Towers',
       author: 'J.R.R. Tolkien',
-      image: '/Images/two towers.jpg',
+      image: '/Images/two-towers.jpg',
     },
     {
       id: 3,
       title: 'The Return of the King',
       author: 'J.R.R. Tolkien',
-      image: '/Images/return of king.jpg',
+      image: '/Images/return-of-king.jpg',
     },
   ];
 
