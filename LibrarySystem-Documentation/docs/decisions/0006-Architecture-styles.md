@@ -37,7 +37,7 @@ The system architecture must support the development of a web application requir
 
 **Chosen Option**: **Three-Tier Architecture**
 
-The Three-Tier Architecture aligns with the project requirements. By separating the application into presentation (client), application logic (server), and data (database) tiers, the architecture enables focused development, ensures scalability, maintainability, and performance. The backend acts as an intermediary between the client and database, processing business logic and ensuring secure, efficient data access.
+The Three-Tier Architecture aligns with the project requirements. By separating the application into presentation (client), application logic (API), and data (database) tiers, the architecture enables focused development, ensures scalability, maintainability, and performance. The backend acts as an intermediary between the client and database, processing business logic and ensuring secure, efficient data access.
 
 ---
 
@@ -47,7 +47,7 @@ The Three-Tier Architecture aligns with the project requirements. By separating 
   * Clear separation of concerns enables parallel development by frontend, backend, and database teams.  
   * Enhances scalability by isolating application logic and data management.  
   * Facilitates maintainability and debugging with distinct layers.  
-  * Allows optimized performance by tailoring each tier to its specific role.
+  * Allows optimised performance by tailoring each tier to its specific role.
 
 * **Bad**:  
   * Increases complexity compared to two-tier systems.  
@@ -97,7 +97,7 @@ The implementation of the Three-Tier Architecture will be validated through:
 
 * **Good**:  
   * Clear separation of presentation, logic, and data layers.  
-  * Enables scalability and optimized performance for each tier.  
+  * Enables scalability and optimised performance for each tier.  
   * Supports independent team workflows and modular development.  
 
 * **Bad**:  
