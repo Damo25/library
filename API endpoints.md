@@ -1,58 +1,64 @@
-<!--This is a simple setup often used for RESTful APIs in documentation or code comments, especially in OpenAPI or Swagger-style formats.
-You should include as markdown file in your github repository and include the link to the folder in the report.-->
-
 # API Endpoint Template
 
-**Endpoint**:
-[HTTP Method] /api/[resource]  
-**Description**: [Brief description of what the endpoint does]  
-**Headers**:
+**Backend API** 
+**Description**:this is the backend of the website and allows for communication with the databases  
+**Extra-information**: if anything more specific is wanted for testing the backend all data can be found in test databases files within the backend folder and then inside the database folder
 
-- `Authorization`: Bearer [token] (required if the endpoint is protected)
+## Backend API Endpoint
 
-- `Content-Type`: application/json
-
-**Query Parameters** (for `GET` requests only):
-
-- `param_name` (type: string, required/optional): Description of the query parameter.
-
-**Request Body** (for `POST`, `PUT`, `PATCH` requests):
-
-```json
-{
-  "field_name": "value" 
-}
-```
-
-## Example API Endpoint
-
-This example shows a `POST` endpoint for creating a new user in a system.  
+This example shows a `POST` endpoint for logging into the system.  
 **Endpoint**: POST /api/users  
-**Description**: Creates a new user in the system.
-
-**Headers**:
-
-- `Authorization`: Bearer [token] (required)
-- `Content-Type`: application/json
+**Description**: logs user into account.
 
 **Request Body**:
 
 ```json
 {
-  "username": "exampleUser", 
-  "email": "user@example.com", 
-  "password": "securePassword123" 
+  "username": "AAAA11", 
+  "password": "password1" 
 }
 ```
 
 ***Response***:
 
-- Status: 201 Created
-- Body:
+-returns active user as username if correct
+
+This example shows a `POST` endpoint for a user searching a specific item.  
+**Endpoint**: POST /api/users  
+**Description**: user searches an item and item is returned.
+
+**Request Body**:
 
 ```json
 {
-  "id": "12345", 
-  "created_at": "2024-11-04T14:00:00z" 
+  "item": "244"
 }
 ```
+
+***Response***:
+
+-returns items descriptors if avaliable
+
+This example shows a `POST` endpoint for signing up to the system.  
+**Endpoint**: POST /api/users  
+**Description**: an account is created for a user
+
+**Request Body**:
+
+```json
+{
+  "username": "AAAA11", 
+  "password": "password1"
+  "Forename": "Pork"
+  "Surname": "John"
+  "phoneNumber": "0800 118 118"
+  "Age": "21"
+  "postcode": "SY23 3QH "
+
+
+}
+```
+
+***Response***:
+
+-creates an account with relevant information
