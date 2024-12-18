@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 const ContentBoxRegister = () => {
 
@@ -55,7 +55,11 @@ const ContentBoxRegister = () => {
             <input type="password" id="password" name="password" placeholder="Add Main Library"/>
           </div>
 
-          <button type="submit" className="login-button">Register</button>
+          <div className='logout-button-spacing'>
+                            <Link to="/Home" className="logout-button">
+                              Register
+                            </Link>
+                          </div>
         </form>
     </div>
   </div>
