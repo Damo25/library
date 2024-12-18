@@ -6,21 +6,21 @@ consulted: {Frontend Team, Backend Team, Everyone}
 informed: {Everyone}
 ---
 
-# Two-Tier Client-Server Architecture for System Design
+# Three-Tier Architecture for System Design
 
 ## Context and Problem Statement
 
-The system architecture must support the development of a web application requiring clear separation of concerns, efficient collaboration between teams, and scalability to handle growth. The project includes distinct frontend and backend components managed by dedicated teams. Selecting an appropriate architecture will ensure smooth development, deployment, and maintenance.
+The system architecture must support the development of a web application requiring clear separation of concerns, efficient collaboration between teams, and scalability to handle growth. The project includes distinct frontend, backend, and database components managed by dedicated teams. Selecting an appropriate architecture will ensure smooth development, deployment, and maintenance.
 
 ---
 
 ## Decision Drivers
 
-* **Separation of Concerns**: Maintain a clean division between the frontend and backend to support independent development.
-* **Team Collaboration**: Enable efficient communication and workflow between the frontend and backend teams.
-* **Scalability**: Ensure the system can handle increasing user loads and data demands.
-* **Maintainability**: Simplify debugging, updates, and testing by isolating issues to the client or server layer.
-* **Performance**: Provide a responsive user experience and ensure efficient data communication.
+* **Separation of Concerns**: Maintain a clean division between the presentation, application logic, and data layers to support independent development.
+* **Team Collaboration**: Enable efficient communication and workflow between the frontend, backend, and database teams.
+* **Scalability**: Ensure the system can handle increasing user loads, complex business logic, and large-scale data demands.
+* **Maintainability**: Simplify debugging, updates, and testing by isolating issues to specific layers.
+* **Performance**: Provide a responsive user experience and ensure efficient processing of application logic and data communication.
 
 ---
 
@@ -28,39 +28,41 @@ The system architecture must support the development of a web application requir
 
 1. **Monolithic Architecture**  
 2. **Two-Tier Client-Server Architecture**  
-3. **Microservices Architecture**
+3. **Three-Tier Architecture**  
+4. **Microservices Architecture**
 
 ---
 
 ## Decision Outcome
 
-**Chosen Option**: **Two-Tier Client-Server Architecture**
+**Chosen Option**: **Three-Tier Architecture**
 
-The Two-Tier Client-Server Architecture aligns with the project requirements. By separating the frontend (client) and backend (server), the architecture enables focused development and ensures scalability, maintainability, and performance. The backend serves as a central data and logic repository, while the frontend handles the user interface and interaction.
+The Three-Tier Architecture aligns with the project requirements. By separating the application into presentation (client), application logic (server), and data (database) tiers, the architecture enables focused development, ensures scalability, maintainability, and performance. The backend acts as an intermediary between the client and database, processing business logic and ensuring secure, efficient data access.
 
 ---
 
 ### Consequences
 
 * **Good**:  
-  * Clear separation of concerns enables parallel development by frontend and backend teams.  
-  * Simplifies debugging and maintenance by isolating issues to the client or server layer.  
-  * Efficient communication through well-documented APIs ensures smooth data exchange.  
-  * Scalable design supports future growth in users and features.
+  * Clear separation of concerns enables parallel development by frontend, backend, and database teams.  
+  * Enhances scalability by isolating application logic and data management.  
+  * Facilitates maintainability and debugging with distinct layers.  
+  * Allows optimized performance by tailoring each tier to its specific role.
 
 * **Bad**:  
-  * Frontend and backend teams must align closely on API specifications and updates.  
-  * Backend performance becomes a bottleneck if not optimized for high load.
+  * Increases complexity compared to two-tier systems.  
+  * Requires careful management of interactions between layers.  
+  * May introduce latency if tiers are not properly optimized.
 
 ---
 
 ### Confirmation
 
-The implementation of the Two-Tier Client-Server Architecture will be validated through:  
-- **Integration Testing**: Verify API communication between frontend and backend.  
-- **Load Testing**: Ensure backend performance under high user loads.  
+The implementation of the Three-Tier Architecture will be validated through:  
+- **Integration Testing**: Verify communication between frontend, backend, and database layers.  
+- **Load Testing**: Ensure performance under high user and data loads.  
 - **User Acceptance Testing**: Confirm a seamless and responsive user experience.  
-- **Code Reviews**: Maintain clean, consistent, and modular codebases for both layers.
+- **Code Reviews**: Maintain clean, consistent, and modular codebases for all layers.
 
 ---
 
@@ -86,8 +88,21 @@ The implementation of the Two-Tier Client-Server Architecture will be validated 
   * Easier debugging and maintenance with clear separation of layers.
 
 * **Bad**:  
-  * Requires precise coordination between frontend and backend teams.  
-  * Backend performance must be optimized to avoid bottlenecks.
+  * Backend performance becomes a bottleneck under high data demands.  
+  * Limited separation of application logic and data management.
+
+---
+
+### Three-Tier Architecture
+
+* **Good**:  
+  * Clear separation of presentation, logic, and data layers.  
+  * Enables scalability and optimized performance for each tier.  
+  * Supports independent team workflows and modular development.  
+
+* **Bad**:  
+  * More complex to implement and manage than two-tier systems.  
+  * Potential latency if communication between tiers is inefficient.
 
 ---
 
@@ -105,4 +120,4 @@ The implementation of the Two-Tier Client-Server Architecture will be validated 
 
 ## More Information
 
-The Two-Tier Client-Server Architecture provides a practical solution for the project, enabling effective collaboration, modularity, and scalability. By leveraging this architecture, the system can grow to meet user demands while maintaining performance and maintainability.
+The Three-Tier Architecture provides a practical solution for the project, enabling effective collaboration, modularity, and scalability. By leveraging this architecture, the system can grow to meet user demands while maintaining performance and maintainability.
