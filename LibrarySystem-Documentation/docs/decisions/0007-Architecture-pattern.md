@@ -15,7 +15,7 @@ The system architecture pattern
 
 Many reasons that this architecture pattern is the way we are working with development 
 
-. due to the many errors that can arise within development working in component based architecture is going to allow for easy testing and maintenance of the code base 
+. due to the many errors that can arise within development, working in component based architecture is going to allow for easy testing and maintenance of the code base 
 as we will easly be able to find and contain issue causing areas of code allowing for easy problem solving and maintance.
 
 .due to containing many of the elements of the code into components this is going to allow them to be universally used across many of the pages of the website 
@@ -44,7 +44,7 @@ as you can allocate in different development
 * **Good**:  
 .easy maintenance for the code base and for testing easier to test due to most code being within components which are easily findable and mostly used in multiple areas
 
-.fits in really well with the architecture design two tier client server that we are going with 
+.fits in really well with the architecture design three tier client server that we are going with 
 
 * **Bad**:  
   . if the size of our front end gets too big we will end up with a lot of components spread across the pages which could cause issues with content management  
@@ -56,7 +56,7 @@ as you can allocate in different development
 
 The implementation of the component based pattern will be regulated by
  
-- User Acceptance Testing to allow for us to be able to keep close eye on the ui and see that its a good experiance for the user 
+- User Acceptance Testing to allow for us to be able to keep close eye on the UI and see that its a good experiance for the user 
 - Code Reviews allow for us to be able to maintain the components we are creating and keep code working and maintained
 
 ---
@@ -80,5 +80,5 @@ The implementation of the component based pattern will be regulated by
 
 ## More Information
 
-due to the high usability of component based development with our project and chosen technologies while also not having the disadvantagee of making the project two big to manage for a small development team
+due to the high usability of component based development with our project and chosen technologies while also not having the disadvantagee of making the project too big to manage for a small development team
 we will be going with component based architecture pattern for the development with react/tailwind

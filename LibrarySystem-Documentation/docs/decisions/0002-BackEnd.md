@@ -38,7 +38,10 @@ Chosen option: "Flask", because there is a large amount of documentation about t
 
 ### Confirmation
 
-{Describe how the implementation of/compliance with the ADR can/will be confirmed. Is the chosen design and its implementation in line with the decision? E.g., a design/code review or a test with a library such as ArchUnit can help validate this. Note that although we classify this element as optional, it is included in many ADRs.}
+The implementation of the backend will be verified by:
+
+* pytest:this will allow for all components of the backend to be checked and validated
+* code simplicity: this will allow for eaiser to read code, which in turn will allow for easier to edit code
 
 ## Pros and Cons of the Options
 
